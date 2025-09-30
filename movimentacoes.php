@@ -50,7 +50,7 @@ $resultado_movimentacoes = $conn->query($sql_movimentacoes);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movimentações - Sistema Studio D.I.Y</title>
     <link rel="stylesheet" href="style.css">
-    
+
     <style>
 /* ====== RESET ====== */
 * {
@@ -61,13 +61,13 @@ $resultado_movimentacoes = $conn->query($sql_movimentacoes);
 }
 
 body {
-  background: linear-gradient(135deg, #f9d5e5, #fcd5ce, #f8c8dc);
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
+  background: linear-gradient(135deg, #fceef3, #fdece7, #fbeaf0); /* tons mais claros */
   min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
-  color: #333;
+  color: #444;
 }
 
 /* ====== CONTAINER ====== */
@@ -96,24 +96,27 @@ body {
   font-weight: 600;
 }
 
-/* ====== BOTÃO ====== */
-.btn {
+/* ===== BOTÕES PADRONIZADOS - ROSA CLARO ESCURO ===== */
+.btn, 
+form button {
   display: inline-block;
-  padding: 12px 20px;
-  background: #d6336c;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #d6336c, #b81e53); /* rosa intenso, mais claro que antes */
   color: #fff;
-  text-decoration: none;
-  font-size: 16px;
+  border: none;
+  border-radius: 10px;
   font-weight: bold;
-  border-radius: 12px;
-  transition: 0.3s;
-  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.btn:hover {
-  background: #b81e53;
+.btn:hover, 
+form button:hover {
+  background: linear-gradient(135deg, #b81e53, #8e1240); /* hover levemente mais escuro */
   transform: scale(1.05);
-  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
 /* Centralizar botão voltar */

@@ -33,13 +33,13 @@ $alerta_estoque = gerarAlertaEstoque($conn);
   }
 
 body {
- background: linear-gradient(135deg, #f9d5e5, #fcd5ce, #f8c8dc);
- min-height: 100vh;
- display: flex;
- align-items: center;
- justify-content: center;
- padding: 20px;
- color: #444;
+  background: linear-gradient(135deg, #fceef3, #fdece7, #fbeaf0); /* tons mais claros */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #444;
 }
 
 .container {
@@ -146,22 +146,35 @@ body {
  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-.btn {
- padding: 10px 20px;
- background: linear-gradient(135deg, #f06292, #f0569bff);
- color: #fff;
- border-radius: 10px;
- text-decoration: none;
- font-weight: bold;
- transition: 0.3s ease;
- display: inline-block;
+/* ===== BOTÕES PADRONIZADOS PARA TODO O SISTEMA ===== */
+.btn,
+form button,
+.alert a,
+.menu-item { /* se quiser uniformizar links tipo botão também */
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #d6336c, #b81e53); /* rosa intenso, mais claro que escuro total */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  font-size: 14px;
 }
 
-.btn:hover {
- background: linear-gradient(135deg, #ec407a, #aa246eff);
- transform: scale(1.05);
- box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.btn:hover,
+form button:hover,
+.alert a:hover,
+.menu-item:hover {
+  background: linear-gradient(135deg, #b81e53, #8e1240); /* hover levemente mais escuro */
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
+
+
 
 @keyframes fadeIn {
  from { opacity: 0; transform: translateY(-15px); }
@@ -193,7 +206,7 @@ body {
   <h3>Estoque Baixo!</h3>
   <ul>
    <?php foreach ($alerta_estoque['esmaltes'] as $esmalte): ?>
-    <li><?= htmlspecialchars($esmalte['nome']) ?> - <?= $esmalte['estoque_atual'] ?>/<?= $esmalte['estoque_minimp'] ?></li>
+    <li><?= htmlspecialchars($esmalte['nome']) ?> - <?= $esmalte['estoque_atual'] ?>/<?= $esmalte['estoque_minim'] ?></li>
    <?php endforeach; ?>
   </ul>
   <p><a href="movimentacoes.php">Registrar Movimentações</a></p>
