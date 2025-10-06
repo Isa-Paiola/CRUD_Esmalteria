@@ -77,7 +77,6 @@ Aqui estão algumas capturas de tela do sistema em funcionamento:
 ### 👩‍💻 Autora
 **Isa Paiola**
 Desenvolvedora e criadora do projeto **CRUD Esmalteria.**
-💌 GitHub - Isa Paiola
 
 ---
 
