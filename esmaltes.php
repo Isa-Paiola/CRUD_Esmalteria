@@ -1,3 +1,4 @@
+
 <?php
 // Começar a sessão
 session_start();
@@ -102,94 +103,129 @@ $resultado_esmaltes = $conn->query($sql);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gerenciar Catalogo - Studio D.I.Y</title>
   <style>
-    /* ===== RESET ===== */
-
+/* ======== RESET E BASE ======== */
 * {
- margin: 0;
- padding: 0;
- box-sizing: border-box;
- font-family: 'Poppins', sans-serif;
- }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-/* ===== BODY ===== */
 body {
-background: linear-gradient(135deg, #f9d5e5, #fcd5ce, #f8c8dc);
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-padding: 20px;
-color: #444;
+  background: linear-gradient(135deg, #f9d5e5, #fcd5ce, #f8c8dc);
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 15px;
+  color: #444;
 }
 
-/* ===== CONTAINER ===== */
+/* ======== CONTAINER PRINCIPAL ======== */
 .container {
-background: #ffffffff;
-padding: 35px;
-border-radius: 20px;
-width: 100%;
-max-width: 1100px;
-box-shadow: 0 6px 20px rgba(255, 99, 162, 0.56);
-animation: fadeIn 0.8s ease-in-out;
+  background: #fff;
+  padding: 45px 35px;
+  border-radius: 25px;
+  width: 100%;
+  max-width: 1100px;
+  box-shadow: 0 8px 25px rgba(214, 51, 108, 0.25);
+  animation: fadeIn 0.8s ease-in-out;
+  overflow: hidden;
 }
 
+/* ======== CABEÇALHO / TÍTULO ======== */
 .container h1 {
-text-align: center;
-margin-bottom: 25px;
-color: #d6336c;
-font-weight: 700;
-letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #d6336c;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2.2rem;
 }
 
-/* ===== FORMULÁRIOS ===== */
-form {
-display: flex;
-gap: 10px;
+/* ======== FORM DE BUSCA ======== */
+.busca {
+  background: #fff5f9;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  border: 1px solid #f8c8dc;
+  box-shadow: 0 3px 10px rgba(214, 51, 108, 0.1);
 }
 
-form input, form select, form textarea {
-padding: 10px;
-border-radius: 12px;
-border: 2px solid #f8c8dc;
-flex: 1;
-font-size: 14px;
+.busca form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
+.busca input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #f8c8dc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.busca input:focus {
   border-color: #d6336c;
   box-shadow: 0 0 8px rgba(214, 51, 108, 0.4);
-  outline: none; /* remove o contorno padrão do navegador */
 }
 
-
-form button, .btn {
-padding: 10px 20px;
-background: linear-gradient(135deg, #d6336c, #f0569bff);
-color: #fff;
-border: none;
-border-radius: 10px;
-font-weight: bold;
-cursor: pointer;
-transition: 0.3s ease;
-text-decoration: none;
+/* ======== BOTÕES ======== */
+.btn,
+form button {
+  background: linear-gradient(135deg, #d6336c, #f0569b);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 25px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
 }
 
-form button:hover, .btn:hover {
-background: linear-gradient(135deg, #b81e53, #fc4999ff);
-transform: scale(1.05);
-box-shadow: 0 4px 10px rgba(214, 51, 108, 0.4);
+.btn:hover,
+form button:hover {
+  background: linear-gradient(135deg, #b81e53, #fc4999);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(214, 51, 108, 0.4);
 }
 
-/* ===== TABELAS ===== */
+/* ======== ALERTAS ======== */
+.alert {
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.alert.success {
+  background: #e6f4ea;
+  border-left: 5px solid #4caf50;
+  color: #2e7d32;
+}
+
+.alert.error {
+  background: #fdecea;
+  border-left: 5px solid #e53935;
+  color: #c62828;
+}
+
+/* ======== TABELA ======== */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 20px;
-  border-radius: 12px;
+  margin-top: 15px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 table th {
@@ -198,81 +234,163 @@ table th {
   padding: 12px;
   text-align: left;
   font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 table td {
   padding: 10px;
-  border-bottom: 1px solid #f1b6c9;
+  border-bottom: 1px solid #f3b7c7;
   font-size: 14px;
 }
 
 table tr:nth-child(even) {
-  background: #fdf0f5;
+  background: #fff5f9;
 }
 
 table tr:hover {
-  background: #f8c8dc;
+  background: #ffe6ef;
+  transition: 0.2s;
 }
+
+/* ======== STATUS DE ESTOQUE ======== */
 .estoque-ok {
-background: #f1f8e9;
+  background: #f1f8e9;
 }
 
 .estoque-baixo {
-background: #ffebee;
+  background: #ffebee;
 }
 
 .status-indicator {
-display: inline-block;
-width: 10px;
-height: 10px;
-border-radius: 50%;
-margin-right: 6px;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 6px;
 }
 
 .status-ok {
-background: #4caf50;
+  background: #4caf50;
 }
 
 .status-baixo {
-background: #e53935;
+  background: #e53935;
 }
 
-/* ===== FORMULÁRIO DE CADASTRO ===== */
+/* ======== FORMULÁRIO DE CADASTRO ======== */
+.form-cadastro {
+  background: #fff5f9;
+  padding: 20px;
+  border: 1px solid #f8c8dc;
+  border-radius: 15px;
+  margin-top: 25px;
+  box-shadow: 0 3px 10px rgba(214, 51, 108, 0.1);
+}
+
+.form-cadastro h3 {
+  color: #d6336c;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: 600;
+}
+
 .form-row {
-display: flex;
-gap: 15px;
-margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  margin-bottom: 15px;
 }
 
 .form-group {
-flex: 1;
-display: flex;
-flex-direction: column;
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-group label {
-margin-bottom: 5px;
-font-weight: 600;
-color: #555;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
 }
 
-/* ===== ANIMAÇÃO ===== */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #f8c8dc;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #d6336c;
+  box-shadow: 0 0 8px rgba(214, 51, 108, 0.4);
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ======== ANIMAÇÃO ======== */
 @keyframes fadeIn {
-from { opacity: 0; transform: translateY(-15px); }
-to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== RESPONSIVIDADE ===== */
-@media (max-width: 768px) {
-.form-row {
-flex-direction: column;
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 900px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .container h1 {
+    font-size: 1.7rem;
+  }
+
+  form,
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn,
+  form button {
+    width: 100%;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  table td,
+  table th {
+    padding: 8px;
+  }
 }
-table {
-font-size: 13px;
-}
-form {
-flex-direction: column;
-}
+
+@media (max-width: 500px) {
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .form-group label {
+    font-size: 0.9em;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 13px;
+  }
 }
 
   </style>
@@ -373,7 +491,7 @@ SESSION: <?php echo htmlspecialchars(print_r($_SESSION, true)); ?></pre>
                 <div class="form-row">
                     <div class="form-group">
                         <label>Estoque Mínimo:</label>
-                        <input type="number" name="estoque_minimp" min="0" value="5" required>
+                        <input type="number" name="estoque_minimp min="0" value="5" required>
                     </div>
                     <div class="form-group">
                         <label>Cores:</label>
