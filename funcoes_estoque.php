@@ -1,7 +1,7 @@
 <?php
 // Função para pegar esmaltes com estoque baixo
 function getEsmaltesEstoqueBaixo($conn) {
-    // Buscar todos os esmaltes
+    // Buscar todas os esmaltes
     $sql = "SELECT * FROM esmaltes WHERE ativo = 1";
     $resultado = $conn->query($sql);
     
