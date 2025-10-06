@@ -56,6 +56,11 @@ Aqui estão algumas capturas de tela do sistema em funcionamento:
 <img width="1919" height="853" alt="Captura de tela 2025-10-06 113851" src="https://github.com/user-attachments/assets/94306e30-7af8-4fb0-b2ac-845035a5ffa3" />
 
 - Movimentações de Estoque
+<img width="1919" height="940" alt="image" src="https://github.com/user-attachments/assets/74ce889e-8a93-428a-bd70-a29f62562521" />
+<img width="1919" height="414" alt="Captura de tela 2025-10-06 114317" src="https://github.com/user-attachments/assets/4c58e017-672b-49fd-8512-08e62f09f9b6" />
+
+- Histórico
+<img width="1919" height="939" alt="Captura de tela 2025-10-06 114414" src="https://github.com/user-attachments/assets/22385f99-d663-424a-ab0a-701c2e4c9d11" />
 
 ---
 
