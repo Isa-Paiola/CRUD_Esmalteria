@@ -43,24 +43,34 @@ O layout é minimalista, ideal para aplicações administrativas que priorizam a
 
 ---
 
-## 📸 Prévia do Sistema
+📸 Prévia do Sistema
+
 Aqui estão algumas capturas de tela do sistema em funcionamento:
-- Tela de Login
-- <img width="1919" height="947" alt="Captura de tela 2025-10-06 113654" src="https://github.com/user-attachments/assets/1a6980e2-a94f-45eb-8a40-0c067fbc4c91" />
 
-- Página Inicial / Dashboard
-<img width="1919" height="946" alt="Captura de tela 2025-10-06 113744" src="https://github.com/user-attachments/assets/64fb7d49-4378-4a20-89e1-55bab74ca658" />
+-  Tela de Login
+<img width="700" alt="Tela de Login" src="https://github.com/user-attachments/assets/1a6980e2-a94f-45eb-8a40-0c067fbc4c91" />
 
-- Cadastro de Esmalte
-<img width="1919" height="935" alt="Captura de tela 2025-10-06 113829" src="https://github.com/user-attachments/assets/68e2924f-0416-4780-a8c9-481b83b51def" />
-<img width="1919" height="853" alt="Captura de tela 2025-10-06 113851" src="https://github.com/user-attachments/assets/94306e30-7af8-4fb0-b2ac-845035a5ffa3" />
+---
 
-- Movimentações de Estoque
-<img width="1919" height="940" alt="image" src="https://github.com/user-attachments/assets/74ce889e-8a93-428a-bd70-a29f62562521" />
-<img width="1919" height="414" alt="Captura de tela 2025-10-06 114317" src="https://github.com/user-attachments/assets/4c58e017-672b-49fd-8512-08e62f09f9b6" />
+-  Página Inicial / Dashboard
+<img width="700" alt="Dashboard" src="https://github.com/user-attachments/assets/64fb7d49-4378-4a20-89e1-55bab74ca658" />
 
-- Histórico
-<img width="1919" height="939" alt="Captura de tela 2025-10-06 114414" src="https://github.com/user-attachments/assets/22385f99-d663-424a-ab0a-701c2e4c9d11" />
+--- 
+
+-  Cadastro de Esmalte
+<img width="700" alt="Cadastro de Esmalte 1" src="https://github.com/user-attachments/assets/68e2924f-0416-4780-a8c9-481b83b51def" />
+<img width="700" alt="Cadastro de Esmalte 2" src="https://github.com/user-attachments/assets/94306e30-7af8-4fb0-b2ac-845035a5ffa3" />
+
+---
+
+-  Movimentações de Estoque
+<img width="700" alt="Movimentações de Estoque 1" src="https://github.com/user-attachments/assets/74ce889e-8a93-428a-bd70-a29f62562521" />
+<img width="700" alt="Movimentações de Estoque 2" src="https://github.com/user-attachments/assets/4c58e017-672b-49fd-8512-08e62f09f9b6" />
+
+---
+
+-  Histórico
+<img width="700" alt="Histórico" src="https://github.com/user-attachments/assets/22385f99-d663-424a-ab0a-701c2e4c9d11" />
 
 ---
 
