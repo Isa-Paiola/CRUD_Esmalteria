@@ -11,14 +11,19 @@ if (!isset($_SESSION['usuario'])) {
 // Inclui o arquivo de configuração para conexão com o banco de dados
 include 'config.php';
 
-// Recebe o ID da esmalte via GET
+// Recebe o ID do esmalte via GET
 $id = $_GET['id'] ?? 0;
 
 if ($id > 0) {
-    // Prepara uma consulta segura para deletar a esmalte
+    $stmt = $conn->prepare("DELETE FROM movimentacoes WHERE id = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $stmt->close();
+    // Prepara uma consulta segura para deletar o esmalte
     $stmt = $conn->prepare("DELETE FROM esmaltes WHERE id = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
+    $stmt->close();
 }
 
 // Redireciona para a lista de esmaltes
