@@ -50,9 +50,8 @@ $resultado_movimentacoes = $conn->query($sql_movimentacoes);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movimentações - Sistema Studio D.I.Y</title>
     <link rel="stylesheet" href="style.css">
-
     <style>
-/* ====== RESET ====== */
+        /* ====== RESET ====== */
 * {
   margin: 0;
   padding: 0;
@@ -61,13 +60,12 @@ $resultado_movimentacoes = $conn->query($sql_movimentacoes);
 }
 
 body {
-  background: linear-gradient(135deg, #fceef3, #fdece7, #fbeaf0); /* tons mais claros */
-  min-height: 100vh;
+  background: linear-gradient(135deg, #f9d5e5, #fcd5ce, #f8c8dc);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  min-height: 100vh;
   padding: 20px;
-  color: #444;
 }
 
 /* ====== CONTAINER ====== */
@@ -77,7 +75,7 @@ body {
   border-radius: 20px;
   max-width: 1000px;
   width: 100%;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(255, 99, 162, 0.56);
   animation: fadeIn 0.8s ease-in-out;
 }
 
@@ -88,44 +86,36 @@ body {
   font-weight: 700;
   text-align: center;
 }
-
-.container h3 {
-  font-size: 20px;
-  margin-bottom: 15px;
-  color: #b81e53;
-  font-weight: 600;
+h3{
+    color: #d6336c;
 }
 
-/* ===== BOTÕES PADRONIZADOS - ROSA CLARO ESCURO ===== */
-.btn, 
-form button {
-  display: inline-block;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #d6336c, #b81e53); /* rosa intenso, mais claro que antes */
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
-  text-decoration: none;
-  font-size: 14px;
-}
+/* ====== BOTÃO ====== */
+.btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #d6336c, #f0569bff);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 12px;
+      transition: 0.3s;
+      text-align: center;
+    }
 
-.btn:hover, 
-form button:hover {
-  background: linear-gradient(135deg, #b81e53, #8e1240); /* hover levemente mais escuro */
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
+    .btn:hover {
+      background: linear-gradient(135deg, #b81e53, #fc4999ff);
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(214, 51, 108, 0.4);
+    }
 
-/* Centralizar botão voltar */
-.btn-voltar {
-  display: flex;
-  justify-content: center;
-  margin: 15px 0;
-  align-items: center;
-}
+    /* Centralizar botão voltar */
+    .btn-voltar {
+      display: flex;
+      justify-content: center;
+      margin: 15px 0;
+    }
 
 /* ====== FORM ====== */
 form {
@@ -230,14 +220,13 @@ td.saida {
     flex-direction: column;
   }
 
-  table th, 
-  table td {
+  table th, table td {
     font-size: 12px;
     padding: 8px;
   }
 }
-    </style>
 
+    </style>
 </head>
 <body>
     <div class="container">
@@ -245,7 +234,7 @@ td.saida {
         
         <a href="index.php" class="btn">Voltar</a>
 
-        <div style="background: #f9f9f9; padding: 15px; border: 1px solid #ddd; margin: 15px 0;">
+        <div style="background: #f9f9f9; padding: 15px; border: 1px solid #ddd; margin: 15px 0; border-radius: 8px;">
             <h3>Nova Movimentação</h3>
             <form method="post">
                 <div class="form-row">
@@ -268,7 +257,7 @@ td.saida {
                                 $estoque_atual = $total_entradas - $total_saidas;
                             ?>
                                 <option value="<?= $esmalte['id'] ?>">
-                                    <?= htmlspecialchars($esmalte['nome']) ?> - <?= $estoque_atual ?>/<?= $esmalte['estoque_minimo'] ?> - R$ <?= number_format($esmalte['preco'], 2, ',', '.') ?>
+                                    <?= htmlspecialchars($esmalte['nome']) ?> - <?= $estoque_atual ?>/<?= $esmalte['estoque_p'] ?> - R$ <?= number_format($esmalte['preco'], 2, ',', '.') ?>
                                 </option>
                             <?php endwhile; ?>
                         </select>
