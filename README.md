@@ -185,6 +185,18 @@ O layout é minimalista, ideal para aplicações administrativas que priorizam a
 
 ---
 
+## Teste de Software
+
+* **Tabela Sistemas**
+<img width="700" alt="1" src="https://github.com/user-attachments/assets/9f5dc3c7-d198-4fd0-bc75-d0e83b20285a" />
+
+---
+
+* **Tabela Testes**
+<img width="700" alt="2" src="https://github.com/user-attachments/assets/ae9e48f8-1c48-4787-9d31-46351631113a" />
+
+---
+
 ## 👩‍💻 Autora
 
 **Isa Paiola**
